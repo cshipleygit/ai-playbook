@@ -25,7 +25,7 @@
     <div class="wrap topbar-inner">
       <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-mark" aria-hidden="true"></span>{{ site.title }}</a>
       <nav class="nav">
-        <a href="{{ '/' | relative_url }}#entries">Entries</a>
+        <a href="{{ '/' | relative_url }}#start-here">Entries</a>
         <a href="{{ '/' | relative_url }}#prompts">Prompts</a>
         <a href="{{ '/' | relative_url }}#about-me">About</a>
       </nav>
@@ -37,7 +37,7 @@
       {% assign section = page.dir | remove: "/" %}
       <p class="crumb">
         <a href="{{ '/' | relative_url }}">← All entries</a>
-        {% if section != "" %}<span class="tag tag-{{ section }}">{% if section == "setup" %}Tool setup{% elsif section == "thinking" %}Thinking{% else %}{{ section | capitalize }}{% endif %}</span>{% endif %}
+        {% if section != "" %}<span class="tag tag-{{ section }}">{% if section == "setup" %}Tool setup{% elsif section == "thinking" %}Thinking{% elsif section == "evals" %}Evals{% elsif section == "case-studies" %}Case study{% else %}{{ section | capitalize }}{% endif %}</span>{% endif %}
         <span class="byline">By {{ site.author }}</span>
       </p>
     {% endunless %}

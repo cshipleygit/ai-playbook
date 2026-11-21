@@ -1,10 +1,40 @@
 # Chance's AI Playbook
 
-I'm Chance Shipley, an engineer who builds AI agents, MCP servers and LLM pipelines, and tests them against real data. This is how I actually build with AI, written up so other people can copy what works.
+I'm Chance Shipley. I build AI agents, MCP tools and LLM pipelines, and I don't trust them until they've been tested against real data. This playbook is how I do it, written up so other people can copy what works.
 
 These aren't tips. Each entry is one real way of working: the setup, who does what (me or the AI), where it breaks, and when not to use it. Every entry comes from real work.
 
-## Entries
+## Start here
+
+- [From my personal MCP server to an agent platform](case-studies/mcp-agent-platform.md): the case study, with the architecture of an agent gateway where ServiceNow decides what every agent may do
+- [Shadow mode before you automate a human step](evals/shadow-mode-before-automating.md): how an auto-reviewer earned control by counting the mistakes nobody would notice
+- [Grow an agent's permissions one rule at a time](guardrails/agent-permissions-by-addition.md): least privilege for a production agent, one explicit rule at a time
+
+## Building AI systems
+
+### Case studies
+Whole projects, end to end.
+
+- [From my personal MCP server to an agent platform](case-studies/mcp-agent-platform.md)
+
+### Evals and rollout
+Measuring AI output against people before handing it control.
+
+- [Shadow mode before you automate a human step](evals/shadow-mode-before-automating.md)
+
+### Agents and guardrails
+What agents are allowed to touch, and how the tools they use are built.
+
+- [Grow an agent's permissions one rule at a time, and never let it borrow a human's name](guardrails/agent-permissions-by-addition.md)
+- [MCP tools must never guess their working context](setup/mcp-tools-never-guess-context.md)
+
+### Coming later
+- **Every human correction becomes a test:** turn review decisions into a regression set that only gets stricter
+- **Grounded generation with a cheap critic first:** facts with IDs in, deterministic checks before an AI judge
+- **Guardrails in code, not prompts:** budgets, turn limits, what the model is allowed to see
+- **Measured, not adopted:** every idea earns its place with a number; the rejects get written down
+
+## Working with AI agents
 
 ### Workflows
 End-to-end ways of getting work done with AI.
@@ -18,11 +48,6 @@ How I decide whether to believe what the AI tells me.
 
 - [Test every claimed fix on the next real record](thinking/test-on-the-next-real-record.md)
 
-### Guardrails
-What agents are allowed to touch, and how that gets decided.
-
-- [Grow an agent's permissions one rule at a time, and never let it borrow a human's name](guardrails/agent-permissions-by-addition.md)
-
 ### Lessons learned
 Times AI was confidently wrong, and what fixed it.
 
@@ -33,25 +58,13 @@ Times AI was confidently wrong, and what fixed it.
 Small practices that make the workflows hold up.
 
 - [Have the agent keep a living implementation plan](habits/living-implementation-plan.md)
-
-### Tool setup
-How the tools agents use are built.
-
-- [MCP tools must never guess their working context](setup/mcp-tools-never-guess-context.md)
+- **Coming later: CLAUDE.md as the project's lab notebook:** measured results, decisions and limits in one place
 
 ### Prompts
 Reusable prompts pulled out of the entries.
 
 - [Verification brief](prompts/verification-brief.md): hand a drafted fix to an agent that can see the real system
 - [Implementation plan instruction](prompts/implementation-plan-instruction.md): make an agent keep a living plan as it works
-
-### Coming later
-- **Shadow mode before automating a human step:** run the AI blind next to the person, count its silent errors
-- **Every human correction becomes a test:** turn review decisions into a regression set that only gets stricter
-- **Measured, not adopted:** every idea earns its place with a number; the rejects get written down
-- **Guardrails in code, not prompts:** budgets, turn limits, what the model is allowed to see
-- **Grounded generation with a cheap critic first:** facts with IDs in, deterministic checks before an AI judge
-- **CLAUDE.md as the project's lab notebook:** measured results, decisions and limits in one place
 
 ## My setup
 
@@ -63,8 +76,8 @@ Reusable prompts pulled out of the entries.
 ## About me
 
 - **pokepipe.** An open-source [computer-vision and LLM pipeline](https://github.com/cshipleygit/pokepipe) that turns raw Pokémon pack-opening videos into narrated vertical shorts. It has a LangGraph agent that recovers cards detection missed, a writer–critic loop for scripts, an auto-reviewer rolled out in shadow mode, and evals against human-reviewed data.
-- **An MCP server for enterprise systems.** I built a custom MCP server that lets AI assistants do development and triage directly in ServiceNow, and took it from a personal prototype on my own time to production, where teammates use it every day. In a before-and-after review of my own work, it cut story effort 6x and incident triage time 6–10x.
-- **Agents on top of it.** A Demand agent in production that turns customer requests into scoped, estimated stories for human review; a human-in-the-loop Problem Triage agent with read-only tools; and an agent gateway with per-run role enforcement and audit logging.
+- **My MCP server and agent platform for ServiceNow.** It started as a personal project on my own time, and I took it to production for my team, with per-user OAuth and team standards. In a before-and-after review of my own work, it cut story effort 6x and incident triage time 6–10x. [Read the case study](case-studies/mcp-agent-platform.md).
+- **Agents on top of it.** A Demand agent in production that turns customer requests into scoped, estimated stories for human review; a human-in-the-loop Problem Triage agent with read-only tools; and an agent gateway I designed, where ServiceNow enforces each caller's roles on every run and logs every decision.
 - **Background.** BS in Computer Engineering from Drexel, and co-author of [Plagiarism Deterrence for Introductory Programming](https://arxiv.org/abs/2206.02848).
 
 Find me on [LinkedIn](https://www.linkedin.com/in/chanceshipley/) and [GitHub](https://github.com/cshipleygit).

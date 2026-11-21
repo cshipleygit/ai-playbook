@@ -17,6 +17,8 @@
   --thinking: #6b4fa0;
   --guardrails: #9a3b5c;
   --setup: #4a5a6a;
+  --evals: #2f6f8f;
+  --cases: #b4472b;
   --serif: "IBM Plex Serif", Georgia, serif;
   --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
@@ -42,6 +44,8 @@
     --thinking: #b9a3e0;
     --guardrails: #e08aa8;
     --setup: #a8b8c8;
+    --evals: #7cc4e0;
+    --cases: #e0805f;
   }
 }
 
@@ -105,6 +109,8 @@ main { padding-top: 48px; padding-bottom: 72px; }
 .tag-thinking { color: var(--thinking); }
 .tag-guardrails { color: var(--guardrails); }
 .tag-setup { color: var(--setup); }
+.tag-evals { color: var(--evals); }
+.tag-case-studies { color: var(--cases); }
 
 /* Typography */
 .content h1, .content h2, .content h3 {
@@ -156,7 +162,10 @@ main { padding-top: 48px; padding-bottom: 72px; }
 .home .content h3#prompts { color: var(--prompts); }
 .home .content h3#lessons-learned { color: var(--lessons); }
 .home .content h3#thinking-patterns { color: var(--thinking); }
-.home .content h3#guardrails { color: var(--guardrails); }
+.home .content h3#agents-and-guardrails { color: var(--guardrails); }
+.home .content h3#evals-and-rollout { color: var(--evals); }
+.home .content h3#case-studies { color: var(--cases); }
+.home .content h3#coming-later { color: var(--muted); }
 .home .content h3#tool-setup { color: var(--setup); }
 .home .content h3 + p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
 
@@ -209,3 +218,27 @@ main { padding-top: 48px; padding-bottom: 72px; }
   border-bottom: 2px solid var(--rule);
 }
 .content td:first-child { white-space: nowrap; }
+
+/* Start here */
+.home .content h2#start-here + ul {
+  list-style: none; padding: 18px 20px; margin: 0 0 18px;
+  background: var(--accent-soft); border-radius: 10px;
+}
+.home .content h2#start-here + ul li { margin: 0 0 10px; color: var(--ink-soft); font-size: 15px; }
+.home .content h2#start-here + ul li:last-child { margin-bottom: 0; }
+.home .content h2#start-here + ul li a { font-weight: 600; font-size: 17px; }
+
+/* Diagrams */
+.content figure.diagram { margin: 8px 0 28px; padding: 16px; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; }
+.content figure.diagram svg { width: 100%; height: auto; display: block; }
+.d-box { fill: var(--bg); stroke: var(--rule); stroke-width: 1.5; }
+.d-key { stroke: var(--accent); stroke-width: 2; }
+.d-inner { fill: var(--surface); stroke: var(--rule); stroke-width: 1; }
+.d-planned { stroke-dasharray: 5 4; stroke: var(--muted); }
+.d-line { stroke: var(--muted); stroke-width: 1.6; fill: none; }
+.d-arrowhead { fill: var(--muted); }
+.d-title { font: 600 16px var(--serif); fill: var(--ink); text-anchor: middle; }
+.d-sub { font: 12.5px var(--sans); fill: var(--ink-soft); text-anchor: middle; }
+.d-small-title { font: 600 13px var(--sans); fill: var(--ink); text-anchor: middle; }
+.d-small { font: 12px var(--sans); fill: var(--ink-soft); text-anchor: middle; }
+.d-label { font: 12px var(--mono); fill: var(--accent); }
