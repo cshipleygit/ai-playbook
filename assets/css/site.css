@@ -13,6 +13,7 @@
   --workflows: #b4472b;
   --habits: #2f6f5e;
   --prompts: #3d5a99;
+  --lessons: #8a5a00;
   --serif: "IBM Plex Serif", Georgia, serif;
   --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
@@ -34,6 +35,7 @@
     --workflows: #e0805f;
     --habits: #6cbfa6;
     --prompts: #8ea7e0;
+    --lessons: #e0b35f;
   }
 }
 
@@ -93,6 +95,7 @@ main { padding-top: 48px; padding-bottom: 72px; }
 .tag-workflows { color: var(--workflows); }
 .tag-habits { color: var(--habits); }
 .tag-prompts { color: var(--prompts); }
+.tag-lessons { color: var(--lessons); }
 
 /* Typography */
 .content h1, .content h2, .content h3 {
@@ -142,6 +145,7 @@ main { padding-top: 48px; padding-bottom: 72px; }
 .home .content h3#workflows { color: var(--workflows); }
 .home .content h3#habits { color: var(--habits); }
 .home .content h3#prompts { color: var(--prompts); }
+.home .content h3#lessons-learned { color: var(--lessons); }
 .home .content h3 + p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
 
 /* Entry lists on the home page become cards */

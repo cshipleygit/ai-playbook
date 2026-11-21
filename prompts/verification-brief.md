@@ -6,7 +6,7 @@ Used in: [From plausible to verified](../workflows/plausible-to-verified.md)
 
 ```
 Context
-We're fixing [what], in [which record or component, with its ID], on [sandbox instance].
+We're fixing [what], in [which record or component, with its ID], on [sandbox environment].
 
 Problem
 [What goes wrong, for whom, and why, as far as we know.]

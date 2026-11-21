@@ -4,19 +4,19 @@
 
 ## The problem
 
-Claude is good at reasoning through a platform problem, but in a chat it can't see my instance. It doesn't know which custom fields we use, which scripts already exist, or what the platform actually does at runtime. It will still give a confident, well-structured answer, and parts of that answer are guesses.
+Claude is good at reasoning through a platform problem, but in a chat it can't see the real system. It doesn't know which custom fields we use, which scripts already exist, or what the platform actually does at runtime. It will still give a confident, well-structured answer, and parts of that answer are guesses.
 
-I could check every guess myself, but that's most of the work. I could also have an agent with instance access fix the problem from scratch, but then I lose the reasoning I did in the chat.
+I could check every guess myself, but that's most of the work. I could also have an agent with access to the system fix the problem from scratch, but then I lose the reasoning I did in the chat.
 
 ## The setup
 
 - **Chat (Claude):** thinks through the problem with me, drafts a fix, and marks which parts are guesses
-- **Agent with instance access:** runs in VS Code through my MCP server, can read records, run background scripts, and (once allowed) make changes in the sandbox
+- **Agent with access to the system:** runs in VS Code through my MCP server, can read records, run background scripts, and (once allowed) make changes in the sandbox
 - **Me:** decides, makes the changes the agent can't, and tests from the front end
 
 ## The loop
 
-1. **Me + chat:** work through the problem until there's a likely fix. Ask the chat to flag every assumption it made about my instance.
+1. **Me + chat:** work through the problem until there's a likely fix. Ask the chat to flag every assumption it made about the system.
 2. **Chat:** write a self-contained brief for the agent (see [verification brief](../prompts/verification-brief.md)). It covers the context, the problem, the proposed fix, a numbered list of things to check, and constraints.
 3. **Agent:** checks each item against the real records and scripts and reports back with citations. It starts out read-only.
 4. **Me:** review the findings. Decide the approach.

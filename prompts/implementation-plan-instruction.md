@@ -1,6 +1,6 @@
 # Implementation plan instruction
 
-Add this to the agent's brief, or to your Copilot custom instructions so every non-trivial task gets a plan.
+Add this to the agent's brief, or to your agent's instructions file (CLAUDE.md, Copilot instructions) so every non-trivial task gets a plan.
 
 Used in: [Have the agent keep a living implementation plan](../habits/living-implementation-plan.md)
 
