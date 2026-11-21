@@ -19,6 +19,7 @@ const PORT = Number(process.env.PORT) || 4000;
 
 const liquid = new Liquid({ root: ROOT });
 liquid.registerFilter("relative_url", (p) => BASE + (p.startsWith("/") ? p : "/" + p));
+liquid.registerFilter("absolute_url", (p) => `http://localhost:${PORT}` + BASE + (p.startsWith("/") ? p : "/" + p));
 
 function readConfig() {
   const site = {};
