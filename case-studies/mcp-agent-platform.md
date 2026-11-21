@@ -6,7 +6,7 @@
 
 It started as a personal project, on my own time and my own PC, against a personal developer instance. The goal was simple: let an AI assistant do the work I actually do in ServiceNow, directly. Building catalog items, writing and running automated tests, triaging incidents and problems.
 
-My manager at the time was sceptical of AI and there was no room to try it at work. When management changed, I showed my new manager it working. She approved a move to our QA instance, and later to production.
+At first it was a side project with no place at work yet. Once I could show it working end to end, my manager approved a move to our QA instance, and later to production.
 
 ## Taking it to production
 
