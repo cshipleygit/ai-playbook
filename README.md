@@ -53,4 +53,4 @@ Find me on [LinkedIn](https://www.linkedin.com/in/chanceshipley/) and [GitHub](h
 
 ## How entries are written
 
-Every entry follows [TEMPLATE.md](TEMPLATE.md). Every entry starts as a team version with internal details and is sanitized before it's published here.
+Every entry follows [TEMPLATE.md](TEMPLATE.md). Entries from work are sanitized before they're published here; entries from my own projects link to the real code.
