@@ -10,16 +10,34 @@ These aren't tips. Each entry is one real way of working: the setup, who does wh
 End-to-end ways of getting work done with AI.
 
 - [From plausible to verified: the chat drafts the fix, an agent checks it](workflows/plausible-to-verified.md)
+- [AI as an exploratory tester that reproduces bugs but never fixes them](workflows/ai-exploratory-tester.md)
+- [Mining my own AI chat history for playbook entries, on a read budget](workflows/mining-chat-history.md)
+
+### Thinking patterns
+How I decide whether to believe what the AI tells me.
+
+- [Test every claimed fix on the next real record](thinking/test-on-the-next-real-record.md)
+
+### Guardrails
+What agents are allowed to touch, and how that gets decided.
+
+- [Grow an agent's permissions one rule at a time, and never let it borrow a human's name](guardrails/agent-permissions-by-addition.md)
+
+### Lessons learned
+Times AI was confidently wrong, and what fixed it.
+
+- [Three confident fixes for a CI hang, then one measurement](lessons/ci-hang-confident-fixes.md)
+- [AI-written tests that pass with nothing tested](lessons/ai-tests-that-test-nothing.md)
 
 ### Habits
 Small practices that make the workflows hold up.
 
 - [Have the agent keep a living implementation plan](habits/living-implementation-plan.md)
 
-### Lessons learned
-Times AI was confidently wrong, and what fixed it.
+### Tool setup
+How the tools agents use are built.
 
-- [Three confident fixes for a CI hang, then one measurement](lessons/ci-hang-confident-fixes.md)
+- [MCP tools must never guess their working context](setup/mcp-tools-never-guess-context.md)
 
 ### Prompts
 Reusable prompts pulled out of the entries.

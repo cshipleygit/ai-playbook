@@ -14,6 +14,9 @@
   --habits: #2f6f5e;
   --prompts: #3d5a99;
   --lessons: #8a5a00;
+  --thinking: #6b4fa0;
+  --guardrails: #9a3b5c;
+  --setup: #4a5a6a;
   --serif: "IBM Plex Serif", Georgia, serif;
   --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
@@ -36,6 +39,9 @@
     --habits: #6cbfa6;
     --prompts: #8ea7e0;
     --lessons: #e0b35f;
+    --thinking: #b9a3e0;
+    --guardrails: #e08aa8;
+    --setup: #a8b8c8;
   }
 }
 
@@ -96,6 +102,9 @@ main { padding-top: 48px; padding-bottom: 72px; }
 .tag-habits { color: var(--habits); }
 .tag-prompts { color: var(--prompts); }
 .tag-lessons { color: var(--lessons); }
+.tag-thinking { color: var(--thinking); }
+.tag-guardrails { color: var(--guardrails); }
+.tag-setup { color: var(--setup); }
 
 /* Typography */
 .content h1, .content h2, .content h3 {
@@ -146,6 +155,9 @@ main { padding-top: 48px; padding-bottom: 72px; }
 .home .content h3#habits { color: var(--habits); }
 .home .content h3#prompts { color: var(--prompts); }
 .home .content h3#lessons-learned { color: var(--lessons); }
+.home .content h3#thinking-patterns { color: var(--thinking); }
+.home .content h3#guardrails { color: var(--guardrails); }
+.home .content h3#tool-setup { color: var(--setup); }
 .home .content h3 + p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
 
 /* Entry lists on the home page become cards */
@@ -180,3 +192,20 @@ main { padding-top: 48px; padding-bottom: 72px; }
   .content blockquote { font-size: 18px; }
 }
 @media (max-width: 400px) { .nav { display: none; } }
+
+/* Tables */
+.content table {
+  width: 100%; border-collapse: collapse; margin: 0 0 24px;
+  font-size: 15px; line-height: 1.5;
+  display: block; overflow-x: auto;
+}
+.content th, .content td {
+  text-align: left; vertical-align: top;
+  padding: 10px 12px; border-bottom: 1px solid var(--rule);
+}
+.content th {
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
+  border-bottom: 2px solid var(--rule);
+}
+.content td:first-child { white-space: nowrap; }

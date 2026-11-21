@@ -25,10 +25,9 @@
     <div class="wrap topbar-inner">
       <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-mark" aria-hidden="true"></span>{{ site.title }}</a>
       <nav class="nav">
-        <a href="{{ '/' | relative_url }}#workflows">Workflows</a>
-        <a href="{{ '/' | relative_url }}#habits">Habits</a>
+        <a href="{{ '/' | relative_url }}#entries">Entries</a>
         <a href="{{ '/' | relative_url }}#prompts">Prompts</a>
-        <a href="{{ '/' | relative_url }}#lessons-learned">Lessons</a>
+        <a href="{{ '/' | relative_url }}#about-me">About</a>
       </nav>
     </div>
   </header>
@@ -38,7 +37,7 @@
       {% assign section = page.dir | remove: "/" %}
       <p class="crumb">
         <a href="{{ '/' | relative_url }}">← All entries</a>
-        {% if section != "" %}<span class="tag tag-{{ section }}">{{ section | capitalize }}</span>{% endif %}
+        {% if section != "" %}<span class="tag tag-{{ section }}">{% if section == "setup" %}Tool setup{% elsif section == "thinking" %}Thinking{% else %}{{ section | capitalize }}{% endif %}</span>{% endif %}
         <span class="byline">By {{ site.author }}</span>
       </p>
     {% endunless %}
