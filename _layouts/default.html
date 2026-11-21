@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% assign is_home = false %}{% if page.url == "/" or page.url == "/index.html" %}{% assign is_home = true %}{% endif %}
+  <title>{% if is_home or page.title == nil %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body class="{% if is_home %}home{% else %}entry{% endif %}">
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="{{ '/' | relative_url }}"><span class="brand-mark" aria-hidden="true"></span>{{ site.title }}</a>
+      <nav class="nav">
+        <a href="{{ '/' | relative_url }}#workflows">Workflows</a>
+        <a href="{{ '/' | relative_url }}#habits">Habits</a>
+        <a href="{{ '/' | relative_url }}#prompts">Prompts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    {% unless is_home %}
+      {% assign section = page.dir | remove: "/" %}
+      <p class="crumb">
+        <a href="{{ '/' | relative_url }}">← All entries</a>
+        {% if section != "" %}<span class="tag tag-{{ section }}">{{ section | capitalize }}</span>{% endif %}
+      </p>
+    {% endunless %}
+    <article class="content">
+      {{ content }}
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>{{ site.description }}</span>
+      <a href="https://github.com/{{ site.github.repository_nwo | default: 'cshipleygit/ai-playbook' }}">View on GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>

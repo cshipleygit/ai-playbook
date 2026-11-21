@@ -1,0 +1,176 @@
+:root {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --ink: #1d1f22;
+  --ink-soft: #4a4f57;
+  --muted: #7a7f87;
+  --rule: #e3dfd6;
+  --accent: #b4472b;
+  --accent-soft: #f3e3dc;
+  --code-bg: #1f2328;
+  --code-ink: #e6e3dc;
+  --inline-code-bg: #ece8df;
+  --workflows: #b4472b;
+  --habits: #2f6f5e;
+  --prompts: #3d5a99;
+  --serif: "IBM Plex Serif", Georgia, serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15171a;
+    --surface: #1c1f23;
+    --ink: #e8e6e1;
+    --ink-soft: #b9bcc2;
+    --muted: #868b93;
+    --rule: #2c3036;
+    --accent: #e0805f;
+    --accent-soft: #3a2620;
+    --code-bg: #0e1012;
+    --code-ink: #e6e3dc;
+    --inline-code-bg: #262a30;
+    --workflows: #e0805f;
+    --habits: #6cbfa6;
+    --prompts: #8ea7e0;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+/* Top bar */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 58px; }
+.brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--serif); font-weight: 600; font-size: 18px;
+  color: var(--ink); text-decoration: none;
+}
+.brand-mark {
+  width: 14px; height: 14px; border-radius: 3px;
+  background: var(--accent); transform: rotate(45deg);
+}
+.nav { display: flex; gap: 20px; }
+.nav a {
+  font-size: 14px; font-weight: 500; color: var(--ink-soft); text-decoration: none;
+}
+.nav a:hover { color: var(--accent); }
+
+main { padding-top: 48px; padding-bottom: 72px; }
+
+/* Breadcrumb + section tag */
+.crumb { display: flex; align-items: center; gap: 14px; margin: 0 0 20px; font-size: 14px; }
+.crumb a { color: var(--muted); text-decoration: none; }
+.crumb a:hover { color: var(--accent); }
+.tag {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 4px; border: 1px solid currentColor;
+  color: var(--muted);
+}
+.tag-workflows { color: var(--workflows); }
+.tag-habits { color: var(--habits); }
+.tag-prompts { color: var(--prompts); }
+
+/* Typography */
+.content h1, .content h2, .content h3 {
+  font-family: var(--serif); font-weight: 600; line-height: 1.25; color: var(--ink);
+}
+.content h1 { font-size: clamp(30px, 5vw, 42px); margin: 0 0 20px; letter-spacing: -0.01em; }
+.content h2 {
+  font-size: 24px; margin: 52px 0 14px; padding-top: 22px;
+  border-top: 1px solid var(--rule);
+}
+.content h3 { font-size: 19px; margin: 32px 0 8px; }
+.content p, .content ul, .content ol { margin: 0 0 18px; }
+.content ul, .content ol { padding-left: 24px; }
+.content li { margin-bottom: 8px; }
+.content li::marker { color: var(--muted); }
+.content strong { font-weight: 600; }
+
+/* Lede: the one-sentence blockquote under each entry title */
+.content blockquote {
+  margin: 0 0 36px; padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--accent);
+  font-size: 20px; line-height: 1.55; color: var(--ink-soft);
+}
+.content blockquote p { margin: 0; }
+
+/* Code */
+.content code {
+  font-family: var(--mono); font-size: 0.88em;
+  background: var(--inline-code-bg); padding: 1px 6px; border-radius: 4px;
+}
+.content pre {
+  background: var(--code-bg); color: var(--code-ink);
+  padding: 20px 22px; border-radius: 8px; overflow-x: auto;
+  font-size: 14px; line-height: 1.6; margin: 0 0 24px;
+}
+.content pre code { background: none; padding: 0; font-size: inherit; color: inherit; }
+.content div.highlighter-rouge, .content figure.highlight { margin: 0 0 24px; }
+.content .highlight pre { margin: 0; }
+
+/* Home page */
+.home .content h1 { font-size: clamp(36px, 7vw, 54px); margin-bottom: 18px; }
+.home .content h1 + p { font-size: 20px; line-height: 1.55; color: var(--ink-soft); }
+.home .content h3 {
+  font-family: var(--mono); font-size: 13px; font-weight: 500;
+  letter-spacing: .08em; text-transform: uppercase; margin: 36px 0 6px;
+}
+.home .content h3#workflows { color: var(--workflows); }
+.home .content h3#habits { color: var(--habits); }
+.home .content h3#prompts { color: var(--prompts); }
+.home .content h3 + p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
+
+/* Entry lists on the home page become cards */
+.home .content h3 + p + ul { list-style: none; padding: 0; display: grid; gap: 10px; }
+.home .content h3 + p + ul li {
+  margin: 0; padding: 14px 18px;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 8px;
+  color: var(--ink-soft); font-size: 15px;
+  transition: border-color .15s, transform .15s;
+}
+.home .content h3 + p + ul li:hover { border-color: var(--accent); transform: translateY(-1px); }
+.home .content h3 + p + ul li a {
+  display: block; font-weight: 600; font-size: 17px; color: var(--ink); text-decoration: none;
+  margin-bottom: 2px;
+}
+.home .content h3 + p + ul li a:hover { color: var(--accent); }
+
+/* Footer */
+.footer { border-top: 1px solid var(--rule); padding: 24px 0 40px; font-size: 14px; color: var(--muted); }
+.footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.footer a { color: var(--muted); }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .wrap { padding: 0 16px; }
+  .nav { gap: 14px; }
+  .nav a { font-size: 13px; }
+  .brand { font-size: 16px; }
+  main { padding-top: 32px; }
+  .content blockquote { font-size: 18px; }
+}
+@media (max-width: 400px) { .nav { display: none; } }
