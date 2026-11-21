@@ -1,2 +1,4 @@
 title: AI Playbook
 description: How I work with AI as a developer on an enterprise platform
+exclude:
+  - tools
