@@ -24,7 +24,7 @@ The AI's confidence never changed between its right and wrong answers. So confid
 
 ## A real example: four confident fixes in a row
 
-**The goal:** changes created automatically by a DevOps plugin should skip approval. Instead, every one landed in the Authorize state with 37 approvers.
+**The goal:** automatically created changes should skip approval. Instead, every one landed in the Authorize state with 37 approvers.
 
 | # | The AI's confident claim | What disproved it | What happened next |
 |---|---|---|---|
@@ -35,7 +35,7 @@ The AI's confidence never changed between its right and wrong answers. So confid
 
 The retraction in row 2 sounds like the moment the AI finally got it right. It wasn't. The "clean proof" was wrong too.
 
-**Resolution:** the AI next proposed cloning the whole change model, which wasn't what I was asking for. The change-management team then approved skipping the Authorize state for these changes, and I edited the model's transition condition. The third test record after that change confirmed it: no approval requested, and the change moved on without an approval group.
+**Resolution:** the AI next proposed cloning the whole change model, which wasn't what I was asking for. Skipping the Authorize state for these changes was then approved, and I edited the model's transition condition. The third test record after that change confirmed it: no approval requested, and the change moved on without an approval group.
 
 In all, about 6 test records disproved 4 confident claims before the real fix.
 

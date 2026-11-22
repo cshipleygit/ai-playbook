@@ -11,7 +11,7 @@ I build agents that work inside ServiceNow through my MCP server: a Problem tria
 
 ## The setup
 
-- **Agents** run in the cloud and call the platform through my MCP server
+- **Agents** call the platform through my MCP server
 - **Each agent's instructions** live in the repo, including an explicit list of what it may write
 - **Me:** approve every new permission, and check what the agent actually did in the platform
 
@@ -30,7 +30,7 @@ I asked for a "story agent" triggered by a button on a Demand, using the same en
 Then the permissions grew, one at a time:
 
 1. **Create one linked Story and add one review note.** Nothing else, in QA only.
-2. **Tool access.** The cloud run exposed a fixed tool list, but that list is shared: "This is used for the Problem agent too tho, I can't restrict it here as this will restrict the tools for all agents." So scope lives in each agent's definition, not in the server's tool list.
+2. **Tool access.** The agent run exposed a fixed tool list, but that list is shared: "This is used for the Problem agent too tho, I can't restrict it here as this will restrict the tools for all agents." So scope lives in each agent's definition, not in the server's tool list.
 3. **Check the instance.** The agent refused to write when the instance URL came back masked. I relaxed this for testing only.
 4. **One Story type only.** The target became one specific Story table, through a dedicated tool instead of generic record creation. When a stale prompt asked for another type, the agent refused: it was "authorized to create only an `sn_safe_story`; I can't substitute a different record type."
 5. **Failure reporting.** A dedicated error write to the matching request row that "does not expose generic record updates."
